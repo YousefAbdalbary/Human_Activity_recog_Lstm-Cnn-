@@ -1,4 +1,4 @@
-# 🎾 Tennis Action Recognition System
+# 🎾 Human Activity Recognition System
 > **An AI-powered web application for real-time tennis swing classification.**
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
