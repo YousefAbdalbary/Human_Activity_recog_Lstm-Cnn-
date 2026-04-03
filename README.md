@@ -1,4 +1,4 @@
-````markdown
+
 # 🏃 Human Activity Recognition (HAR)
 > **A Hybrid Deep Learning Approach using LRCN (CNN-LSTM) for Video Classification.**
 
