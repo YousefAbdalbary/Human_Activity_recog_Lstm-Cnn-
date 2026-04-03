@@ -1,8 +1,4 @@
-Here is the full **README.md** file for your project in standard Markdown format. You can copy this directly into your GitHub repository.
 
------
-
-````markdown
 # 🎥 Human Activity Recognition using CNN-LSTM
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
