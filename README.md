@@ -1,92 +1,106 @@
+Here is the full **README.md** file for your project in standard Markdown format. You can copy this directly into your GitHub repository.
 
-# 🏃 Human Activity Recognition (HAR)
-> **A Hybrid Deep Learning Approach using LRCN (CNN-LSTM) for Video Classification.**
+-----
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)](https://www.tensorflow.org/)
-[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green?logo=opencv)](https://opencv.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+````markdown
+# 🎥 Human Activity Recognition using CNN-LSTM
 
----
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.20+-FF4B4B.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 📌 Project Overview
-This repository contains a robust pipeline for **Human Activity Recognition (HAR)**. Unlike standard image classification, this project focuses on the temporal aspect of human movement by processing sequences of video frames to identify actions like walking, running, or sports-specific movements.
-
-### Key Highlights
-* **Architecture:** Utilizes **LRCN (Long-term Recurrent Convolutional Network)**.
-* **Feature Extraction:** CNN layers (TimeDistributed) extract spatial features from each frame.
-* **Sequence Learning:** LSTM layers process the temporal flow to understand the action over time.
-* **High Confidence:** Capable of achieving high accuracy (e.g., 97%+) on specialized action datasets.
+## 👤 Author Information
+* **Name:** Yousef Mohamed Abdalbary
+* **Student ID:** 4221432
+* **GitHub:** [YousefAbdalbary](https://github.com/YousefAbdalbary)
+* **Repository:** [Human_Activity_recog_Lstm-Cnn-](https://github.com/YousefAbdalbary/Human_Activity_recog_Lstm-Cnn-)
 
 ---
 
-## 🚀 Live Demo & Visuals
-![App Demo](app_screenshot.png)
-*Figure 1: Streamlit interface predicting a "Tennis Swing" with 97.29% confidence.*
+## 📝 Project Overview
+This project implements a Deep Learning solution for **Human Activity Recognition (HAR)** using a hybrid **CNN-LSTM** architecture. By combining the spatial feature extraction power of Convolutional Neural Networks with the temporal sequencing capabilities of Long Short-Term Memory networks, the model accurately classifies sports actions from raw video data.
+
+### 🎯 Target Actions
+The model is optimized to recognize:
+* **Basketball** 🏀
+* **CricketShot** 🏏
+* **TennisSwing** 🎾
 
 ---
 
-## 🧬 Model Architecture
-The model is designed to handle the complexity of video data by combining two powerful neural networks:
+## 🏗️ Architecture Details
+The model utilizes **Transfer Learning** to achieve high accuracy with minimal training time.
 
-1.  **Convolutional Neural Network (CNN):** A pre-trained or custom CNN processes individual frames to identify objects and body positions.
-2.  **Long Short-Term Memory (LSTM):** A recurrent layer that "remembers" the previous frames to classify the movement as a continuous action.
+1.  **Spatial Feature Extractor (CNN):** A frozen **MobileNetV2** backbone (pretrained on ImageNet) processes 20 frames per video to extract 1280 essential visual features.
+2.  **Temporal Analyzer (LSTM):** A 64-unit **LSTM** layer interprets the sequence of these features to understand the motion.
+3.  **Classifier:** A Fully Connected layer with **Softmax** activation outputs the final probability.
 
-**Data Flow:**
-`Input Video` ➡️ `Frame Extraction` ➡️ `CNN (Spatial Features)` ➡️ `LSTM (Temporal Features)` ➡️ `Softmax Classification`
+
+
+### Model Specifications
+| Feature | Detail |
+| :--- | :--- |
+| **Base Model** | MobileNetV2 (Frozen) |
+| **Recurrent Layer** | LSTM (64 Hidden Units) |
+| **Sequence Length** | 20 Frames |
+| **Total Params** | 2,568,643 |
+| **Trainable Params** | 344,771 |
+| **Accuracy** | **98.67% (Validation)** |
 
 ---
 
-## 🛠️ Tech Stack
-* **Deep Learning:** TensorFlow / Keras
-* **Computer Vision:** OpenCV
-* **Deployment/UI:** Streamlit
-* **Data Science:** NumPy, Pandas, Matplotlib
+## 📊 Training Performance
+The model was trained for 10 epochs on a curated subset of the **UCF101** dataset. 
+
+| Epoch | Loss | Accuracy (%) |
+| :--- | :--- | :--- |
+| 1 | 0.8822 | 59.73% |
+| 5 | 0.3300 | 90.38% |
+| 10 | 0.1605 | 95.30% |
 
 ---
 
-## 💻 Installation & Usage
+## 🚀 How to Run
 
-### 1. Clone the Repository
+### 1. Requirements
+Ensure you have Python installed, then run:
 ```bash
-git clone [https://github.com/YousefAbdalbary/Human_Activity_recog_Lstm-Cnn-.git](https://github.com/YousefAbdalbary/Human_Activity_recog_Lstm-Cnn-.git)
-cd Human_Activity_recog_Lstm-Cnn-
+pip install torch torchvision opencv-python pandas numpy streamlit
 ````
 
-### 2\. Install Dependencies
+### 2\. Launch the Web App
+
+The project includes a **Streamlit** interface for easy testing. Run the following command in your terminal:
 
 ```bash
-pip install -r requirements.txt
+streamlit run app.py
 ```
 
-### 3\. Run Inference
+### 3\. Usage
 
-To test the model on your own video files:
-
-```bash
-python predict.py --video path/to/your/video.mp4
-```
+1.  Open the local URL provided by Streamlit.
+2.  Upload a `.mp4` or `.avi` video of Basketball, Cricket, or Tennis.
+3.  Click **Predict Action** to see the results.
 
 -----
 
-## 📊 Performance
+## 🖼️ Application Preview
 
-| Activity | Precision | Recall | F1-Score |
-| :--- | :--- | :--- | :--- |
-| Tennis Swing | 0.98 | 0.97 | 0.97 |
-| Walking | 0.94 | 0.92 | 0.93 |
-| Running | 0.91 | 0.95 | 0.93 |
+Below is a screenshot of the system successfully identifying a Tennis Swing with high confidence:
 
 -----
 
-## 👤 Author
+## 📂 Project Structure
 
-**Yousef Abdalbary**
-*AI Engineer*
-
-  * [GitHub](https://www.google.com/search?q=https://github.com/YousefAbdalbary)
-  * [LinkedIn](https://www.google.com/search?q=https://www.linkedin.com/in/yousef-abdalbary)
-
+```text
+.
+├── dataset_root/          # Preprocessed video data
+├── app.py                 # Streamlit Web Application
+├── train_model.py         # Model training script
+├── cnn_lstm_action_model.pth # Saved model weights
+└── README.md              # Project documentation
+```
 
 ```
-```
+
