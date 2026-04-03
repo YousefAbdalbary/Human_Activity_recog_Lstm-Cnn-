@@ -6,13 +6,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.20+-FF4B4B.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 👤 Author Information
-* **Name:** Yousef Mohamed Abdalbary
-* **Student ID:** 4221432
-* **GitHub:** [YousefAbdalbary](https://github.com/YousefAbdalbary)
-* **Repository:** [Human_Activity_recog_Lstm-Cnn-](https://github.com/YousefAbdalbary/Human_Activity_recog_Lstm-Cnn-)
 
----
 
 ## 📝 Project Overview
 This project implements a Deep Learning solution for **Human Activity Recognition (HAR)** using a hybrid **CNN-LSTM** architecture. By combining the spatial feature extraction power of Convolutional Neural Networks with the temporal sequencing capabilities of Long Short-Term Memory networks, the model accurately classifies sports actions from raw video data.
