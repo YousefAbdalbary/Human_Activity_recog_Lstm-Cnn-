@@ -51,3 +51,14 @@ The underlying model uses a spatial-temporal approach to understand movement.
    ```bash
    git clone [https://github.com/YousefAbdalbary/tennis-action-recognition.git](https://github.com/YousefAbdalbary/tennis-action-recognition.git)
    cd tennis-action-recognition
+
+
+Run the application:
+    Bash
+
+    streamlit run app.py
+
+📊 Performance Metrics
+Class	Precision	Recall	F1-Score
+Tennis Swing	0.98	0.97	0.97
+Serve	0.96	0.95	0.95
